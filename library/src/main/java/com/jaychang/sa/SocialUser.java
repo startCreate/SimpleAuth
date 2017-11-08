@@ -81,16 +81,4 @@ public class SocialUser implements Parcelable {
     this.pageLink = in.readString();
   }
 
-  public static final Parcelable.Creator<SocialUser> CREATOR = new Parcelable.Creator<SocialUser>() {
-    @Override
-    public SocialUser createFromParcel(Parcel source) {
-      return new SocialUser(source);
-    }
-
-    @Override
-    public SocialUser[] newArray(int size) {
-      return new SocialUser[size];
-    }
-  };
-
 }

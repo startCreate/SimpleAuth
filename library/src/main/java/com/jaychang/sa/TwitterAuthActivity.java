@@ -70,17 +70,13 @@ public class TwitterAuthActivity extends SimpleAuthActivity {
 
   private void handleSuccess(TwitterSession session) {
     final ProgressDialog loadingDialog = DialogUtils.createLoadingDialog(this);
-    loadingDialog.show();
-
     TwitterApiClient twitterApiClient = TwitterCore.getInstance().getApiClient();
     AccountService accountService = twitterApiClient.getAccountService();
     Call<User> call = accountService.verifyCredentials(false, true, true);
     call.enqueue(new Callback<User>() {
       @Override
       public void success(Result<User> userResult) {
-        loadingDialog.dismiss();
-
-        SocialUser user = new SocialUser();
+        TwitterUser user = new TwitterUser();
         User data = userResult.data;
         user.userId = String.valueOf(data.getId());
         user.accessToken = session.getAuthToken().token;
@@ -89,6 +85,7 @@ public class TwitterAuthActivity extends SimpleAuthActivity {
         user.fullName = data.name;
         user.username = data.screenName;
         user.pageLink = String.format(PAGE_LINK, data.screenName);
+        user.secret = session.getAuthToken().secret;
 
         handleSuccess(user);
       }
