@@ -20,13 +20,8 @@ android {
 }
 
 android.defaultConfig.manifestPlaceholders = [
-        facebookAppId        : "189953571452011",
-        googleWebClientId    : "775503623453-sqk59kuvr2f8qkb9fkcnhef5uvn9riu4.apps.googleusercontent.com",
         twitterConsumerKey   : "PsoYoXQ7mPSdlT54KtegfJZoZ",
         twitterConsumerSecret: "GJ2RcsQno6F8aEHdHZDvYu318h9SjYUsT6fp6IeCcuNLYJMvp2",
-        instagramClientId    : "76bedc2d27dd4e52841e576d4ce8cc79",
-        instagramClientSecret: "28d91eb23ab440beb55b3a3f112f4bb2",
-        instagramRedirectUri : "https://localhost/oauth2redirect"
 ]
 
 dependencies {

@@ -7,27 +7,27 @@ import android.view.Window;
 
 abstract class SimpleAuthActivity extends AppCompatActivity {
 
-  @Override
-  protected void onCreate(@Nullable Bundle savedInstanceState) {
-    supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-    super.onCreate(savedInstanceState);
-  }
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        super.onCreate(savedInstanceState);
+    }
 
-  protected void handCancel() {
-    getAuthData().getCallback().onCancel();
-    finish();
-  }
+    protected void handCancel() {
+        getAuthData().getCallback().onCancel();
+        finish();
+    }
 
-  protected void handleError(Throwable error) {
-    getAuthData().getCallback().onError(error);
-    finish();
-  }
+    protected void handleError(Throwable error) {
+        getAuthData().getCallback().onError(error);
+        finish();
+    }
 
-  protected void handleSuccess(SocialUser user) {
-    getAuthData().getCallback().onSuccess(user);
-    finish();
-  }
+    protected void handleSuccess(SocialUser user) {
+        getAuthData().getCallback().onSuccess(user);
+        finish();
+    }
 
-  protected abstract AuthData getAuthData();
+    protected abstract AuthData getAuthData();
 
 }

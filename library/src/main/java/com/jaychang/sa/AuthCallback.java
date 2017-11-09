@@ -2,10 +2,10 @@ package com.jaychang.sa;
 
 public interface AuthCallback {
 
-  void onSuccess(SocialUser socialUser);
+    void onSuccess(SocialUser socialUser);
 
-  void onError(Throwable error);
+    void onError(Throwable error);
 
-  void onCancel();
+    void onCancel();
 
 }
