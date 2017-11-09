@@ -20,5 +20,4 @@ class AuthData {
     AuthCallback getCallback() {
         return callback;
     }
-
 }
